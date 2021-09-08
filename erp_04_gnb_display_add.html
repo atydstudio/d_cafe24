@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>CAFE24 디자인센터 ERP - Admin</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="./assets/vendor/icon-set/style.css">
+    <link rel="stylesheet" href="./assets/vendor/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="./assets/vendor/@yaireo/tagify/dist/tagify.css">
+    <link rel="stylesheet" href="./assets/vendor/daterangepicker/daterangepicker.css">    
+    <link rel="stylesheet" href="./assets/vendor/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="./assets/css/docs.min.css">
+    <link rel="stylesheet" href="./assets/vendor/datatables.net.extensions/fixedColumns.dataTables.min.css">
+
+    <!-- CSS Front -->
+    <link rel="stylesheet" href="./assets/css/theme.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>  
+    <script src="./assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="./assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    
+  </head>
+
+  <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
+    
+    <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+    
+    <!-- ========== HEADER ========== -->
+
+    <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+      <div class="navbar-nav-wrap">
+        <div class="navbar-brand-wrapper">
+          <!-- Logo -->
+          <a class="navbar-brand" href="./index.html" aria-label="Front">
+            <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
+            <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
+          </a>
+          <!-- End Logo -->
+        </div>
+
+        <div class="navbar-nav-wrap-content-left">
+          <!-- Navbar Vertical Toggle -->
+          <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+            <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip"
+              data-placement="right" title="Collapse"></i>
+            <i class="tio-last-page navbar-vertical-aside-toggle-full-align"
+              data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+              data-toggle="tooltip" data-placement="right" title="Expand"></i>
+          </button>
+        </div>
+        <!-- End Navbar Vertical Toggle -->
+
+        <!-- Navbar -->
+        <div class="navbar-nav-wrap-content-left collapse navbar-collapse" id="navbarNavMenu">
+          <div class="navbar-body">
+            <ul class="navbar-nav flex-grow-1">
+              <!-- 상단 메인 메뉴 -->
+              <!-- Nav -->
+              <ul class="nav nav-segment">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">
+                    <i class="tio-home-outlined nav-icon"></i> 사이트 운영
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="tio-user-outlined nav-icon"></i> 브랜드 관리
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="tio-tune nav-icon"></i> 거래 관리
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                    <i class="tio-image nav-icon"></i> 서비스 통계
+                  </a>
+                </li>
+              </ul>
+              <!-- End Nav -->
+              <!-- End 상단 메인 메뉴 -->
+            </ul>
+          </div>
+
+          <!-- 상단 서브 메뉴 -->
+          <div class="navbar-nav-wrap-content-right">
+            <!-- Navbar -->
+            <ul class="navbar-nav align-items-center flex-row">
+
+              <!-- 링크 -->
+              <div class="hs-unfold">
+
+                <button type="button" class="btn btn-white">
+                  디자인센터
+                  <i class="tio-menu-vs-outlined ml-1"></i>
+                </button>
+
+                <div class="navbar-dropdown-menu" style="width: 20rem;">
+                </div>
+              </div>
+              <!-- End 링크 -->
+              <div class="col column-divider text-left"> </div>
+              <li class="nav-item">
+                <!-- Account -->
+                <div class="hs-unfold">
+                  <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper " href="javascript:;"
+                     data-hs-unfold-options='{
+                       "target": "#accountNavbarDropdown",
+                       "type": "css-animation"
+                     }'>
+                    <div class="avatar avatar-sm avatar-circle">
+                      <img class="avatar-img" src="./assets/img/160x160/img1.jpg" alt="Image Description">
+                      <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                    </div>
+                  </a>
+                  <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
+                    <div class="dropdown-item-text">
+                      <div class="media align-items-center">
+                        <div class="avatar avatar-sm avatar-circle mr-2">
+                          <img class="avatar-img" src="./assets/img/160x160/img1.jpg" alt="Image Description">
+                        </div>
+                        <div class="media-body">
+                          <span class="card-title h5">이영준님</span>
+                          <span class="card-text">@cafe24corp.com</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Profile &amp; account">프로필 계정설정</span>
+                    </a>
+                    <!-- End Unfold -->
+
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Manage team">설정</span>
+                    </a>
+
+                    <div class="dropdown-divider"></div>
+
+                    <a class="dropdown-item" href="#">
+                      <span class="text-truncate pr-2" title="Sign out">로그아웃</span>
+                    </a>
+                  </div>
+                </div>
+                <!-- End Account -->
+              </li>
+            </ul>
+            <!-- End Navbar -->
+          </div>
+          <!-- End 상단 서브 메뉴 -->
+
+        </div>
+    </header>
+
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+
+    <!-- 메인 네비게이션 -->
+    <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered">
+      <div class="navbar-vertical-container">
+        <div class="navbar-vertical-footer-offset">
+          <div class="navbar-brand-wrapper justify-content-between">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="./index.html" aria-label="Front">
+              <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
+              <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
+            </a>
+            <!-- End Logo -->
+
+            <!-- Navbar Vertical Toggle -->
+            <button type="button"
+              class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+              <i class="tio-clear tio-lg"></i>
+            </button>
+            <!-- End Navbar Vertical Toggle -->
+
+          </div>
+
+          <!-- Content -->
+          <div class="navbar-vertical-content">
+            <ul class="navbar-nav navbar-nav-lg nav-tabs">
+
+              <!-- 사이트 운영 -->
+              <li class="nav-item">
+                <small class="nav-subtitle" title="사이트 운영">사이트 운영</small>
+                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+              </li>
+              <!-- End 사이트 운영 -->
+
+              <!-- 상품 조회 -->
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="상품 조회" data-placement="left">
+                  <i class="tio-earth-east nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">상품 조회</span>
+                </a>
+              </li>
+              <!-- End 상품 조회 -->
+
+              <!-- 상품 카테고리 설정 -->
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="상품카테고리 설정" data-placement="left">
+                  <i class="tio-tune-horizontal nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">상품카테고리 설정</span>
+                </a>
+              </li>
+              <!-- End 상품 카테고리 설정 -->
+
+              <!-- 디바이더 -->
+              <li class="nav-item">
+                <div class="nav-divider"></div>
+              </li>
+              <!-- End 디바이더 -->
+
+              <!-- 진열 심사 -->
+              <li class="nav-item">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="진열 심사" data-placement="left">
+                  <i class="tio-imac nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">진열 심사</span>
+                </a>
+              </li>
+              <!-- End 진열 심사 -->
+
+              <!-- GNB 진열 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link active" href="./erp_04_gnb_display.html" title="GNB 진열" data-placement="left">
+                  <i class="tio-format-bullets nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">GNB 진열</span>
+                </a>
+              </li>
+              <!-- End GNB 진열 -->
+
+              <!-- 메인 상단 진열 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="./erp_05_main_top_display.html" title="메인 상단 진열" data-placement="left">
+                  <i class="tio-dashboard-vs-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">메인 상단 진열</span>
+                </a>
+              </li>
+              <!-- End 메인 상단 진열 -->
+
+              <!-- 메인 독점 상품 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="메인 독점 상품" data-placement="left">
+                  <i class="tio-glasses nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">메인 독점 상품</span>
+                </a>
+              </li>
+              <!-- End 메인 독점 상품 -->
+
+              <!-- 기획전 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="기획전" data-placement="left">
+                  <i class="tio-weight-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">기획전</span>
+                </a>
+              </li>
+              <!-- End 기획전 -->
+
+              <!-- 디바이더 -->
+              <li class="nav-item">
+                <div class="nav-divider"></div>
+              </li>
+              <!-- End 디바이더 -->
+
+              <!-- 베스트셀러 선발 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="베스트셀러 선발" data-placement="left">
+                  <i class="tio-crown-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">베스트셀러 선발</span>
+                </a>
+              </li>
+              <!-- End 베스트셀러 선발 -->
+
+              <!-- 베스트셀러 관리 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="베스트셀러 관리" data-placement="left">
+                  <i class="tio-premium-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">베스트셀러 관리</span>
+                </a>
+              </li>
+              <!-- End 베스트셀러 관리 -->
+
+              <!-- 인기브랜드 선발 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="인기브랜드 선발" data-placement="left">
+                  <i class="tio-award-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">인기브랜드 선발</span>
+                </a>
+              </li>
+              <!-- End 인기브랜드 선발 -->
+
+              <!-- 인기브랜드 관리 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="인기브랜드 관리" data-placement="left">
+                  <i class="tio-medal nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">인기브랜드 관리</span>
+                </a>
+              </li>
+              <!-- End 인기브랜드 관리 -->
+
+              <!-- 인기검색어 선발 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="인기검색어 선발" data-placement="left">
+                  <i class="tio-heart-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">인기검색어 선발</span>
+                </a>
+              </li>
+              <!-- End 인기검색어 선발 -->
+
+              <!-- 디바이더 -->
+              <li class="nav-item">
+                <div class="nav-divider"></div>
+              </li>
+              <!-- End 디바이더 -->
+
+              <!-- 자주묻는질문 관리 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="자주묻는질문 관리" data-placement="left">
+                  <i class="tio-bookmark-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">자주묻는질문 관리</span>
+                </a>
+              </li>
+              <!-- End 자주묻는질문 관리 -->
+
+              <!-- 이용가이드 관리 -->
+              <li class="nav-item ">
+                <a class="js-nav-tooltip-link nav-link " href="#" title="이용가이드 관리" data-placement="left">
+                  <i class="tio-message-failed-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">이용가이드 관리</span>
+                </a>
+              </li>
+              <!-- End 이용가이드 관리 -->
+
+              <!-- 공지사항 관리 -->
+              <li class="navbar-vertical-aside-has-menu ">
+                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;" title="공지사항 관리">
+                  <i class="tio-notifications-on-outlined nav-icon"></i>
+                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">공지사항 관리</span>
+                </a>
+
+                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
+                  <li class="nav-item">
+                    <a class="nav-link " href="#" title="국내">
+                      <span class="tio-circle nav-indicator-icon"></span>
+                      <span class="text-truncate">국내</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#" title="해외">
+                      <span class="tio-circle nav-indicator-icon"></span>
+                      <span class="text-truncate">해외</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- End 공지사항 관리 -->
+            </ul>
+          </div>
+          <!-- End Content -->
+
+          <!-- Footer -->
+          <div class="navbar-vertical-footer">
+            © 2021 CAFE24 Inc.
+          </div>
+          <!-- End Footer -->
+
+        </div>
+      </div>
+    </aside>
+    <!-- End 메인 네비게이션 -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" class="main">
+      <!-- Content -->
+      <div class="content container-fluid">
+        <!-- Page Header 타이틀 -->
+        <div class="page-header sbm">
+          <div class="row align-items-center mb-3">
+            <div class="col-sm mb-2 mb-sm-0">
+              <h1 class="page-header-title">GNB 진열 등록</h1>
+            </div>
+          </div>
+        </div>
+        <!-- End Page Header 타이틀 -->
+
+        <!-- Card 시작 -->
+        <div class="card">
+          <!-- Tab Content -->
+          <div class="tab-pane fade p-4 show active" id="nav-result2" role="tabpanel" aria-labelledby="nav-resultTab2">
+            <!-- For Validation -->
+            <form class="js-validate">
+              <!-- Input 메뉴 -->
+              <div class="row mt-5 mb-3">
+                <label for="requiredLabel" class="col-md-3 col-form-label input-label text-md-right">메뉴</label>
+                <div class="col-md-6 js-form-message">
+                  <select class="custom-select">
+                    <option selected="" value="1">카테고리</option>
+                    <option value="2">기획전</option>
+                    <option value="3">커스텀</option>
+                    <option value="3">베스트</option>
+                    <option value="3">스토리</option>
+                    <option value="3">고객지원</option>
+                  </select>
+                </div>
+              </div>
+              <!-- End Input 메뉴-->
+              
+              <!-- Input 제목 -->
+              <div class="row mb-3">
+                <label for="minlengthLabel" class="col-md-3 col-form-label input-label text-md-right">제목</label>
+                <div class="col-md-6 js-form-message">
+                  <input type="text" class="form-control" id="minlengthLabel" name="form-control-minlength" placeholder="제목을 입력해주세요 (최대 20자)" minlength="4" required="">
+                </div>
+              </div>
+              <!-- End Input 제목-->
+
+              <!-- Input 랜딩페이지 -->
+              <div class="row mb-3">
+                <label for="urlLabel" class="col-md-3 col-form-label input-label text-md-right">렌딩 페이지</label>
+                <div class="col-md-6 js-form-message">
+                  <input type="url" class="form-control" id="urlLabel" name="form-control-url" placeholder="http://d.cafe24.com/" required="">
+                </div>
+              </div>
+              <!-- End Input 랜딩페이지 -->                    
+              
+              <!-- Input 썸네일 이미지-->
+              <div class="row mb-3">
+                <label for="maxlengthLabel" class="col-md-3 col-form-label input-label text-md-right">썸네일 이미지</label>
+                <div class="col-md-6 js-form-message">
+
+            <!-- Dropzone -->
+            <div id="attachFilesLabel" class="js-dropzone dropzone-custom custom-file-boxed dz-clickable">
+              <div class="dz-message custom-file-boxed-label">
+                <img class="avatar avatar-xl avatar-4by3 mb-3" src="./assets/svg/illustrations/browse.svg" alt="Image Description">
+
+                <h5>※ 등록 가능 파일: png, jpg(jpeg) / 1MB 이하</h5>
+
+                <h5>파일을 놓거나 드래그 해주세요</h5>
+
+                <p class="mb-2">or</p>
+
+                <span class="btn btn-sm btn-white">파일 첨부 하기</span>
+
+              </div>
+            </div>
+            <!-- End Dropzone -->
+                </div>
+              </div>
+              <!-- End Input 썸네일 이미지 -->
+
+              <!-- 노출기간 Input -->
+              <div class="row mb-3">
+                <label for="rangelengthLabel" class="col-md-3 col-form-label input-label text-md-right">노출기간</label>
+                <div class="col-md-6 js-form-message">
+                  <!-- Input Group -->
+                  <div class="input-group input-group-merge">
+                  <input type="text" id="with-arrow-field" class="js-daterangepicker form-control daterangepicker-custom-input">
+
+                  <div class="input-group-append" onclick="$('#with-arrow-field').data('daterangepicker').toggle();">
+                    <span class="input-group-text">
+                      <i class="tio-chevron-down"></i>
+                    </span>
+                    </div>
+                  </div>
+                  <!-- End Input Group -->
+                </div>
+              </div>
+
+              <!-- 노출여부 Switch -->
+              <div class="row mb-3 switch">
+                <label class="col-md-3 input-label text-md-right">노출여부</label>
+                <div class="col-md-6 js-form-message">
+                  <!-- Checkbox Switch -->
+                  <label class="toggle-switch d-flex align-items-center" for="customSwitch">
+                    <input type="checkbox" class="toggle-switch-input" id="customSwitch" name="swtichToggle[]" required="">
+                    <span class="toggle-switch-label">
+                      <span class="toggle-switch-indicator"></span>
+                    </span>
+                    <span class="toggle-switch-content">
+                      <span class="d-block">노출 활성화 하기</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <!-- End Switch -->
+
+              <!-- Button Submit -->
+              <div class="row mb-10">
+                <div class="col-md-6 offset-md-5">
+                  <a href="./erp_04_gnb_display.html" button type="button" class="btn btn-secondary">취소하기</button></a>
+                  <a href="./erp_04_gnb_display.html" button type="button" class="btn btn-dark">저장하기</button></a>
+                </div>
+              </div>
+              <!-- End Button Submit -->
+            </form>
+          </div>
+        </div>
+        <!-- End Card 시작 -->
+      </div>
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+
+
+
+
+
+    <!-- JS Global Compulsory  -->
+    <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendor/datatables.net.extensions/select/select.min.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js"></script>
+    <script src="./assets/vendor/hs-nav-scroller/dist/hs-nav-scroller.min.js"></script>
+    <script src="./assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+    <script src="./assets/vendor/list.js/dist/list.min.js"></script>
+    <script src="./assets/vendor/prism/prism.js"></script>
+    <script src="./assets/vendor/daterangepicker/moment.min.js"></script>
+    <script src="./assets/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside.min.js"></script>
+    <script src="./assets/vendor/list.js/dist/list.min.js"></script>
+    <script src="./assets/vendor/prism/prism.js"></script>
+    <script src="./assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="./assets/vendor/datatables.net.extensions/select/select.min.js"></script>
+    <script src="./assets/vendor/select2/dist/js/select2.full.min.js"></script>
+    <script src="./assets/vendor/daterangepicker/moment.min.js"></script>
+    <script src="./assets/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="./assets/vendor/sortablejs/dist/sortable.umd.js"></script>
+    <script src="./assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="./assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="./assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
+    <script src="./assets/vendor/jszip/dist/jszip.min.js"></script>
+    <script src="./assets/vendor/pdfmake/build/pdfmake.min.js"></script>
+    <script src="./assets/vendor/pdfmake/build/vfs_fonts.js"></script>
+    <script src="./assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="./assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="./assets/vendor/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="./assets/vendor/datatables.net.extensions/dataTables.fixedColumns.min.js"></script>
+
+    <!-- JS Front -->
+    <script src="./assets/js/theme.min.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+      $(document).on('ready', function () {
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
+        var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
+        $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
+
+
+        // INITIALIZATION OF GO TO
+        // =======================================================
+        $('.js-go-to').each(function () {
+          var goTo = new HSGoTo($(this)).init();
+        });
+
+
+        // INITIALIZATION OF NAV SCROLLER
+        // =======================================================
+        $('.js-nav-scroller').each(function () {
+          new HsNavScroller($(this), {
+            delay: 400,
+          }).init()
+        });
+
+
+        // INITIALIZATION OF LISTJS COMPONENT
+        // =======================================================
+        var docsSearch = $.HSCore.components.HSList.init('#docsSearch');
+
+
+        // GET JSON FILE RESULTS
+        // =======================================================
+        $.getJSON('../assets/json/docs-search.json', function(data) {
+          docsSearch.add(data);
+        });
+
+
+        // INITIALIZATION OF UNFOLD
+        // =======================================================
+        $('.js-hs-unfold-invoker').each(function () {
+          var unfold = new HSUnfold($(this)).init();
+        });
+
+        
+        // INITIALIZATION OF DATERANGEPICKER
+        // =======================================================
+        $('.js-daterangepicker').each(function () {
+          var d = $.HSCore.components.HSDaterangepicker.init($(this));
+        });
+
+        $.HSCore.components.HSDaterangepicker.init($('.js-daterangepicker-times'), {
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour')
+        });
+
+        $.HSCore.components.HSDaterangepicker.init($('.js-daterangepicker-clear'));
+
+        $('.js-daterangepicker-clear').on('apply.daterangepicker', function(ev, picker) {
+          $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('.js-daterangepicker-clear').on('cancel.daterangepicker', function(ev, picker) {
+          $(this).val('');
+        });
+
+        var start = moment().subtract(29, 'days');
+        var end = moment();
+
+        function cb(start, end) {
+          $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+
+        $.HSCore.components.HSDaterangepicker.init($('#js-daterangepicker-predefined'), {
+          startDate: start,
+          endDate: end,
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          }
+        }, cb);
+
+        cb(start, end);
+      });
+
+
+        // INITIALIZATION OF DROPZONE FILE ATTACH MODULE
+        // =======================================================
+        $('.js-dropzone').each(function () {
+          var dropzone = $.HSCore.components.HSDropzone.init('#' + $(this).attr('id'));
+        });
+
+
+
+    </script>
+
+    <!-- IE Support -->
+    <script>
+      if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+  </body>
+</html>
