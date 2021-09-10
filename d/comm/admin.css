@@ -1,0 +1,399 @@
+@charset "utf-8";
+@import "../../img3/comm/common20.css"; /* ����湲�吏� */
+
+* {margin:0; padding:0;}
+a {text-decoration:none; color:#545454;}
+select {font-family:dotum; font-size:12px;}
+input {font-family:dotum, ����;}
+html, body {width:100%;}
+/* layout */
+#wrap {width:100%;}
+/* 濡�怨�, ���� ��硫��� */
+.logout {float:left; width:1280px; margin:10px 0 5px 0; text-align:right;}
+.logout a:hover {text-decoration:underline;}
+#header {position:relative; float:left; width:100%; padding:0 0 3px 0; background:url(https://img.cafe24.com/img3/d_center/admin/tab_bg.gif) left 33px repeat-x #fff;}
+#header h1 {position:absolute; left:6px; display:inline; z-index:100;}
+.mainNav {position:relative; width:857px; top:3px; padding:0 0 10px 197px; background:url(https://img.cafe24.com/img3/d_center/admin/tab_bg.gif) left bottom repeat-x;}
+.mainNav ul {width:850px; height:33px;}
+.mainNav ul li {float:left; margin-right:5px; padding-left:1px; background:url(https://img.cafe24.com/img3/d_center/admin/tab_bg_off.gif) left top no-repeat; display:inline;}
+.mainNav ul li a {height:14px; padding:8px 20px 8px 19px; color:#666; font-weight:bold; text-align:center; background:url(https://img.cafe24.com/img3/d_center/admin/tab_bg_off.gif) right top no-repeat; display:inline-block;}
+.mainNav ul li.on {background:url(https://img.cafe24.com/img3/d_center/admin/tab_bg_on.gif) left top no-repeat;}
+.mainNav ul li.on a {color:#fff; background:url(https://img.cafe24.com/img3/d_center/admin/tab_bg_on.gif) right top no-repeat;}
+
+/* main style */
+#main_middle {clear:both; float:left; padding:20px;}
+.main_schedule_wrap {float:left; width:1242px; padding:3px; background:#b1d0fc;}
+.main_schedule {float:left; width:1210px; padding:5px 15px; background:#fff; border:1px solid #91bbf6;}
+.main_schedule h3 {float:left; width:150px; margin-right:35px; padding:10px; font-size:16px; line-height:26px; display:inline;}
+.main_schedule dl {float:left; width:1000px; padding-top:10px;}
+.main_schedule dt {clear:both; float:left; height:14px; margin:4px 15px 5px 0; padding-left:8px; background:url(https://img.cafe24.com/img3/d_center/admin/bul_gray_dot.gif) left 4px no-repeat;}
+.main_schedule dd {height:23px;}
+.main_cont {float:left; float:left; width:1280px; padding:35px 0;}
+.main_cont .fir {margin:0 !important;}
+.main_menu {float:left; width:202px; margin-left:60px; background:url(https://img.cafe24.com/img3/d_center/admin/main_bg_bt.gif) left bottom no-repeat; display:inline;}
+.main_menu h3 {padding:25px 20px 15px 20px; font-size:14px; color:#666; text-align:center; background:#fff url(https://img.cafe24.com/img3/d_center/admin/main_bg_top.gif) left top no-repeat;}
+.main_menu .main_list {clear:both; float:left; width:165px; min-height:440px; _height:440px; padding:17px; background:url(https://img.cafe24.com/img3/d_center/admin/main_bg_bt.gif) left bottom no-repeat; display:inline;}
+.main_menu .main_list ul {clear:both; float:left; margin-top:15px; padding-top:15px; background:url(https://img.cafe24.com/img3/d_center/admin/main_line.gif) left top no-repeat;}
+.main_menu .main_list ul.fir {padding:0; background:none;}
+.main_menu .main_list ul li {clear:both; float:left; width:150px; margin-top:5px; padding-left:12px; background:url(https://img.cafe24.com/img3/d_center/admin/main_ico.gif) left 3px no-repeat;}
+.main_menu .main_list ul ul {width:145px; margin-top:5px; padding:0; background:none;}
+.main_menu .main_list ul ul li {width:130px; font-size:11px; background:url(https://img.cafe24.com/img3/d_center/admin/tree_line.gif) left 5px no-repeat;}
+
+#middle {position:relative; float:left; width:1280px; margin:0; padding:15px 0 30px 0; background:url(https://img.cafe24.com/img3/d_center/admin/middle_bg.gif) left top repeat-y;}
+#second_nav {float:left; width:185px; padding:0 8px;}
+#second_nav h2 {float:left; margin-bottom:3px;}
+.leftmenu_bg {float:left; width:183px; background:url(https://img.cafe24.com/img3/d_center/admin/left_bg.gif) left top repeat-y;}
+.leftmenu {float:left; width:179px; padding:10px 2px; background:url(https://img.cafe24.com/img3/d_center/admin/left_bg_bt.gif) left bottom no-repeat;}
+.leftmenu_top {padding-top:2px; background:url(https://img.cafe24.com/img3/d_center/admin/left_bg_top.gif) left top no-repeat;}
+.leftmenu ul.top {width:173px; margin-bottom:10px; padding-bottom:10px; border-bottom:1px dotted #ccc;}
+.leftmenu h3 {float:left; width:159px; margin:5px 0; padding:6px 10px 4px 10px; font-size:12px; color:#545454; background:#eaf0f6;}
+.leftmenu ul {float:left; padding:0 0 5px 8px;}
+.leftmenu ul li {clear:both; margin:4px 0 0 0;}
+.leftmenu ul li a {padding:0 0 0 10px; background:url(https://img.cafe24.com/img3/d_center/admin/left_bul_off.gif) left 3px no-repeat;}
+.leftmenu ul li a.on {color:#4c87dd; font-weight:bold; background:url(https://img.cafe24.com/img3/d_center/admin/left_bul_on.gif) left 3px no-repeat;}
+.leftmenu ul ul {width:153px; margin-left:10px; padding:0 0 5px 0; font-size:11px; display:inline;}
+.leftmenu ul ul li {float:left; width:100%; padding:0;}
+.leftmenu ul ul li a {padding:0; color:#666; background:none;}
+.leftmenu ul ul li a.on {color:#4c87dd; font-weight:normal; background:none;}
+.leftmenu ul ul ul {width:155px; padding:0 0 0 8px;}
+.leftmenu ul ul ul ul {width:155px; padding:0 0 0 8px;}
+.tree_left {padding:0 0 0 10px;}
+.tree_left .tree_menu2 {padding:0 0 3px 0;}
+.tree_left .tree_menu li a {padding:0; font-weight:normal !important; background:none;}
+.tree_left .tree_menu li a.on {color:#4c87dd;}
+.tree_left .tree_menu2 li a {width:143px; padding:0 0 0 10px; background:url(https://img.cafe24.com/img3/d_center/admin/tree_line.gif) 2px 5px no-repeat !important; display:block;}
+.tree_left .tree_menu2 li a.on {color:#4c87dd;}
+
+#content_group {float:left; width:1064px; margin:0; padding:2px 0 0 15px; z-index:1;}
+h3#content_top  {float:left; width:1044px; margin-bottom:15px; padding:3px 0 7px 20px; border-bottom:1px solid #d5d5d5; font-size:14px; background:url(https://img.cafe24.com/img3/d_center/admin/bul_h3.gif) 1px 3px no-repeat;}
+#content {position:relative; clear:both; float:left; width:100%; min-height:500px; _height:500px; margin:0;}
+#footer {position:relative; clear:both; float:left; width:100%; height:30px; margin:0; border-top:1px solid #999; background:#fff; overflow:hidden;}
+#footer p {position:absolute; z-index:-1; visibility:hidden;}
+
+.title_area {clear:both; float:left; width:100%; margin-bottom:5px; padding-top:4px;}
+.title_area .h4_title {float:left;}
+.title_area .all_pay {float:left; font-weight:bold; margin-left:20px; display:inline-block;}
+.title_area .list_menu {float:right; margin-top:-4px;}
+.title_area .list_menu ul {float:left;}
+.title_area .list_menu li {float:left; padding:4px 5px 0 6px; background:url(https://img.cafe24.com/img3/d_center/admin/tab_sub_line.gif) left 4px no-repeat;}
+.title_area .list_menu li.fir {background:none;}
+.title_area .list_menu li a {color:#545454;}
+.title_area .list_menu li.on a {color:#1230b3;}
+.row_list {padding-top:5px;}
+.row_list li {height:20px; margin-bottom:3px; text-align:left; display:block;}
+.row_list .btn_line .btn_a {margin:-3px 0 0 0;}
+.col_list li {float:left;}
+.search_list {float:left; width:100%; margin-bottom:10px;  padding:15px 0; border:1px solid #ccc; background:#f6f6f6;}
+.search_list dt {float:left; width:80px; margin:3px 10px 0 0; text-align:center; display:inline;}
+.search_list dd {text-align:left;}
+h4.h4_title {margin-bottom:5px; padding-left:12px; font-size:12px; background:url(https://img.cafe24.com/img3/d_center/admin/bul_h4.gif) 1px 3px no-repeat;}
+td p.point_g {float:left; padding:3px 0 0 8px; background:url(https://img.cafe24.com/img3/d_center/admin/point_dot.gif) left 9px no-repeat;}
+td p.point_g .inputStyle {margin-top:-3px;}
+td p.point_g .btn_a {margin-top:-2px;}
+p.point_g {padding:0 0 0 8px; background:url(https://img.cafe24.com/img3/d_center/admin/point_dot.gif) left 4px no-repeat;}
+p.table_info {margin:0 0 5px 0;}
+
+/* 寃��� form */
+#search_form_bg {float:left; width:1054px; margin-bottom:15px; padding:5px; background:#cad4f2;}
+#search_form {float:left; width:1044px; padding:5px; background:#fff;}
+#search_form table {width:100%; margin-bottom:5px;}
+
+.g_form {float:left; width:1044px; margin-bottom:20px; padding:5px 10px; border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#f1f1f1;}
+.g_form table {width:100%;}
+.g_form table .l_cont {text-align:left;}
+.g_form table .c_cont {text-align:center;}
+.g_form table .r_cont {text-align:right;}
+
+.product_area {float:left; width:800px;}
+.product_area .left {float:left; width:360px; height:180px; padding:5px 10px; border:2px solid #ccc; overflow:auto; display:inline;}
+
+.product_area .left {float:left; width:360px; height:180px; padding:5px 10px; border:2px solid #ccc; overflow:auto; display:inline;}
+.product_area .left ul li a {float:left; margin:0; padding:3px 0 0 0; display:block;}
+.product_area .tree_menu {width:320px; margin:0 0 0 10px; font-size:12px; font-weight:normal;}
+.product_area .tree_menu li {clear:both; float:left; width:100%; margin:3px 0 0 0; line-height:16px;}
+.product_area .tree_menu2 {float:left; width:300px; margin:0 0 0 12px; padding:0; display:inline;}
+.product_area .tree_menu2 li {clear:both; float:left; width:100%;}
+.product_area .tree_menu2 li a {margin:0 0 0 12px; padding:0 0 0 8px !important; color:#666; background:url(https://img.cafe24.com/img3/d_center/admin/tree_line.gif) left 5px no-repeat !important; display:block;}
+
+.product_area .right {float:left; width:374px; height:174px; margin-left:17px; padding:5px 10px 10px 10px; border:2px solid #ccc; background:#f0f0f0; display:inline;}
+.product_area .right select {width:100%; height:151px; border:1px solid #ccc;}
+
+.product_select {float:left; width:775px;}
+.product_select select {float:left; width:745px; height:160px; border:1px solid #ccc;}
+.product_select .page_button {float:right; margin:35px 0 0 0;}
+.product_select .page_button li {clear:both; margin-bottom:5px;}
+.product_select .page_button li img {vertical-align:middle;}
+
+.product_select2 {width:100%;}
+.product_select2 select {width:100%; height:324px; border:1px solid #ccc;}
+.page_button2 {float:right; margin:4px 0 0 0;}
+.page_button2 li {float:left margin-left:5px; display:inline;}
+.page_button2 li img {vertical-align:top;}
+
+td.product_img {height:180px !important; border:none;}
+
+/* ���대� */
+table tr.off {background:#fff; cursor:pointer;}
+table tr.on {background:#f9f9f9; cursor:pointer;}
+td.data_none {height:60px !important;}
+
+.table {clear:both; width:100%; border-left:1px solid #ccc; border-bottom:2px solid #ccc;}
+.table th {height:16px; padding:6px 10px 4px 10px; text-align:left; color:#2642bc; border-top:1px solid #ccc; border-right:1px solid #ccc; background:#dee4f5;}
+.table td {height:18px; padding:4px 10px; vertical-align:middle; color:#666; border-top:1px solid #ccc; border-right:1px solid #ccc;}
+.table td.pd2 {padding:2px 5px !important;}
+.table td.pointbg {padding:5px 10px; text-align:left; background:#f5f5f5;}
+
+.table_g {clear:both; width:100%; border-left:1px solid #ccc; border-bottom:2px solid #ccc;}
+.table_g th {height:17px; padding:4px 5px; color:#545454; border-top:1px solid #ccc; border-right:1px solid #ccc; background:#f6f6f6;}
+.table_g td {height:17px; padding:4px 5px; text-align:center; vertical-align:middle; color:#666; line-height:16px; border-top:1px solid #ccc; border-right:1px solid #ccc;}
+.table_g td.pd2 {padding:2px 5px !important;}
+.table_g td.l {padding:4px 10px !important;}
+.table_g td.r {padding:4px 10px !important;}
+.table_g td.pointbg {padding:4px 10px; text-align:left; background:#f5f5f5;}
+.l_popup .table_g {border-collapse:collapse;}
+
+.photo {width:90px; padding:10px !important; vertical-align:middle !important;}
+.photo table {width:60px; margin:0 auto;}
+.photo th {text-align:center; vertical-align:middle; border-left:1px solid #ccc; border-bottom:1px solid #ccc;}
+.photo th div {width:60px; height:60px; overflow:hidden; display:block;}
+.photo td {padding:5px 0 0 0; text-align:left; vertical-align:text-bottom; border:none;}
+
+.photo_list {float:left; padding:5px 0;}
+.photo_list table {float:left; margin-right:10px; display:inline;}
+.photo_list td {width:50px; height:50px; padding:0 !important; text-align:center !important; vertical-align:middle; border:1px solid #ccc !important; overflow:hidden;}
+.photo_list ul.list {float:left;}
+.photo_list ul.list li {margin-top:3px; line-height:14px;}
+
+table a {color:#666; text-decoration:underline;}
+table a:hover {text-decoration:underline;}
+table.thc th,
+table.tdc td {text-align:center; padding:5px !important;}
+table.tdt td {vertical-align:top;}
+table.th666 th {color:#666;}
+table td.btn_a {vertical-align:top;}
+table.t0 th,
+table.t0 td {padding:5px !important;}
+table td.bgyellow {background:#fffbe7;}
+
+/* input ���� */
+.mt-3 {margin:-3px 0 0 0 !important;}
+select {height:20px;}
+.selectbox {font-size:12px; vertical-align:middle;}
+.checkbox {width:13px; height:13px;}
+.radioStyle {width:13px; height:13px; vertical-align:middle; margin:-2px 5px 0 0;}
+.checkStyle {width:13px; height:13px; margin:-3px 0 0 0; vertical-align:middle;}
+*html .radioStyle {width:13px; height:13px; margin:0 0 4px 0;}
+*html .checkStyle {width:13px; height:13px; margin:0 0 4px 0;}
+.input_search {height:19px; padding:2px 5px 0 5px; font-size:11px; vertical-align:middle; border:1px solid #ccc; background:#fbf9e9;}
+.inputStyle {height:15px; padding:2px 5px 0 5px; vertical-align:middle; border:1px solid #ccc;}
+.inputStyle_on {height:15px; padding:2px 5px 0 5px; vertical-align:middle; border:2px solid #ff5400;}
+.textform {width:99%; font-family:����; font-size:12px; border:1px solid #ccc;}
+.mail_edit {padding:5px !important;}
+.mail_edit textarea {width:100%; height:200px; font-family:����; font-size:12px; border:0;}
+.sms_edit {padding:5px !important;}
+.sms_edit .text {margin-bottom:5px;}
+.sms_edit .text .byte {color:#0066ff !important;}
+.sms_edit .text .num {color:#0066ff !important;}
+.sms_edit textarea {width:100%; height:100px; font-family:����; font-size:12px; border:1px solid #ccc;}
+.list_gab {margin-left:20px !important;}
+.frame_area {clear:both; width:100%; height:65px;}
+.frame_table {padding:1px;}
+/* �고�� 而щ�� */
+.point01 {color:#cc0000;}
+.point02{color:#1d65ad;}
+.point03 {font-size:11px; color:#999;}
+.cc00 {color:#cc0000 !important;}
+.mail_num {color:#b0b0b0 !important;}
+.txt_add {height:15px; padding:3px 0 0 5px; vertical-align:middle; font-size:11px; color:#999 !important; display:inline-block;}
+
+/* tab menu */
+.tabStyle {width:100%; height:25px; margin-bottom:10px; background:url(https://img.cafe24.com/img3/d_center/admin/tab2_bg.gif) left bottom repeat-x;}
+.tabStyle a:hover {text-decoration:none;}
+.tabStyle ul li {float:left; margin-left:5px; background:url(https://img.cafe24.com/img3/d_center/admin/tab2_off.gif) left top no-repeat; display:inline;}
+.tabStyle ul li a {margin:0 0 0 2px; padding:6px 13px 5px 12px; text-align:center; font-weight:bold; color:#999 !important; background:url(https://img.cafe24.com/img3/d_center/admin/tab2_off.gif) right top no-repeat; display:inline-block;}/* //DCAFE-8593 */
+.tabStyle ul li.on {background:url(https://img.cafe24.com/img3/d_center/admin/tab2_on.gif) left top no-repeat;}
+.tabStyle ul li.on a {color:#5579ad !important; background:url(https://img.cafe24.com/img3/d_center/admin/tab2_on.gif) right top no-repeat;}
+
+/* paging */
+.paging 			{float:left; width:100%; margin-top:20px; text-align:center;}
+.paging a 			{min-width:26px; _width:26px; height:14px; margin:0 2px 0 0; padding:6px 0 3px 0; color:#666; vertical-align:top; text-align:center; font-weight:bold; text-decoration:none; border:1px solid #fff; display:inline-block;}
+.paging a:hover     {text-decoration:underline; border:1px solid #dedede;}
+.paging a.img 		{margin:6px 2px 0 0; padding:0; vertical-align:top; border:none;}
+.paging a:hover.img 		{border:none;}
+.paging a.end 		{margin:0 5px 0 0;}
+.paging a.nowpage 	{min-width:26px; padding:6px 0 3px 0; color:#ff5500; border:1px solid #dedede;}
+.paging_img {margin:6px 2px 0 0; padding:0; vertical-align:top;}
+
+ul.list_col {float:left; margin:1px 0 0 0;}
+ul.list_col li {float:left; width:110px;}
+
+/* 二쇱���ы�� */
+.addbox {clear:both; float:left; width:1050px; padding:10px 5px; border:2px solid #eee;}
+.addbox h4 {clear:both; margin:0 0 5px 0; font-size:12px;}
+.addbox ul {clear:both; float:left; margin:0 0 0 10px; width:752px; display:inline;}
+.addbox ul li {clear:both; float:left; width:744px; padding:2px 0 1px 8px; line-height:20px; color:#666; background:url(https://img.cafe24.com/img3/d_center/admin/bul_gray_dot.gif) 2px 9px no-repeat;}
+
+/* popup layout style */
+.win_pop {padding:15px;}
+.popup_wrap {position:absolute; width:100%; z-index:1000; display:none;}
+.popup {padding-bottom:17px; font-size:11px; background:#fff; border:1px solid #0e264e; display:block;}
+.popup .pop_header {width:100%; height:15px; padding:7px 0; background:url(https://img.cafe24.com/img3/builder/admin/pop_header_bg.gif) repeat-x; border-bottom:1px solid #b3c5de;}
+.popup .pop_header h2 {float:left; color:#fff; font-weight:bold; margin-left:10px; display:inline;}
+.popup .pop_header a {float:right; width:17px; height:16px; margin:-2px 10px 0 0; padding:0; background:url(https://img.cafe24.com/img3/builder/admin/button.gif) left top no-repeat; display:inline-block;}
+.popup .pop_header a:hover {background-position:-19px top;}
+.popup .pop_header a span {position:absolute; z-index:-1; display:none;}
+.popup .pop_content {clear:both; padding:17px 10px 0 10px;}
+.popup .pop_content a {color:#333; text-decoration:none;}
+.popup .pop_content a:hover {text-decoration:underline;}
+.popup table {border-collapse:collapse;}
+/* ie selectbox bug */
+iframe.ie6_select {position:absolute; top:0; left:0; z-index:-99; border:0; filter:alpha(opacity=0);}
+
+/* 踰��� �ㅽ���� */
+span.btn_a,
+span.btn_a input,
+span.btn_a button {
+	position:relative; margin:0; font-family:dotum, ����; font-size:12px; white-space:nowrap; vertical-align:middle;
+	background:url(https://img.cafe24.com/img3/d_center/admin/btn_gr_bg.gif) left top no-repeat; border:0; display:inline-block; overflow:visible;}
+span.btn_a {padding:0; background-position:left top;}
+span.btn_a button,
+span.btn_a input {height:19px; left:2px; padding:2px 5px 0 3px; text-align:center; vertical-align:top; text-align:center; line-height:18px; color:#545454; background-position:right top; cursor:pointer;}
+
+span.btn_blue,
+span.btn_blue input,
+span.btn_blue button {
+	margin:0; font-family:dotum, ����; font-size:12px; white-space:nowrap; vertical-align:middle;
+	background:url(https://img.cafe24.com/img3/d_center/admin/btn_blue.gif) left top no-repeat; border:0; display:inline-block; overflow:visible;}
+span.btn_blue {padding:0; background-position:left top;}
+span.btn_blue button,
+span.btn_blue input {height:26px; margin-left:2px; padding:1px 10px 0 9px; text-align:center; vertical-align:middle; font-weight:bold; line-height:26px; color:#fff; background-position:right top; cursor:pointer;}
+
+input.btn_b {height:26px; padding:1px 7px 0 7px; vertical-align:middle; font-weight:bold; color:#666; line-height:18px; letter-spacing:-1px; border:1px solid #d2d2d2; display:inline-block; white-space:nowrap; overflow:visible; cursor:pointer;}
+
+span.btn_img img { vertical-align:bottom; }
+
+/* 踰��� ���� */
+.btn_area {position:relative; clear:both; float:left; width:100%; margin-top:20px; display:block;}
+.btn_area .btn_c {position:absolute; width:100%; text-align:center;}
+.btn_area .btn_r {margin:0 !important;}
+.btn_center {width:100%; margin:0; text-align:center;}
+.btn_l {width:100%; margin:5px 0 0 0; text-align:left;}
+.btn_l span {margin-right:5px;}
+.btn_r {width:100%; margin:5px 0 0 0; text-align:right;}
+.btn_r span {margin-left:5px;}
+.btn_big {float:left; width:100%; margin:15px 0 0 0; text-align:center;}
+
+/* ����由ъ�ㅽ�� �몄�대낫湲� ���댁�� */
+#layerProductLangHelp { z-index:190; position:absolute; width:389px; padding-top:2px; background:url("https://img.cafe24.com/img3/d_center/bg_product_lang.png") no-repeat 0 0; }
+#layerProductLangHelp .inner { padding:12px 15px 13px; background:url("https://img.cafe24.com/img3/d_center/bg_product_lang.png") no-repeat right bottom; }
+#layerProductLangHelp h2 { padding-left:8px; font-size:12px; font-weight:normal; color:#404040; background:url("https://img.cafe24.com/img3/d_center/ico_product_lang_title.gif") no-repeat 0 5px; }
+#layerProductLangHelp .close { position:absolute; right:10px; top:10px; overflow:hidden; width:11px; height:11px; border:0; text-indent:100%; background:url("https://img.cafe24.com/img3/d_center/btn_product_lang.png") no-repeat 0 0; }
+#layerProductLangHelp ul { overflow:hidden; padding:5px 0 0; *zoom:1; }
+#layerProductLangHelp li { float:left; padding:4px 10px 4px 0; }
+#layerProductLangHelp li img { margin:0 3px 0 0; vertical-align:middle; }
+#layerProductLangHelp li a { color:#404040; }
+#layerProductLangHelp li a:hover { text-decoration:underline; }
+#layerProductLangHelp .edge { position:absolute; top:0; width:9px; height:6px; margin-top:-5px; background:url("https://img.cafe24.com/img3/d_center/bg_product_lang_edge.png") no-repeat 0 0; }
+#layerProductLangHelp .edgeLeft { left:15px; }
+#layerProductLangHelp .edgeRight { right:15px; }
+
+.siteList { overflow:hidden; }
+.siteList ul.list { margin-top:-1px; padding:10px 0 15px; border-top:1px dashed #ddd; }
+.siteList li { padding:2px 0; margin:0; }
+
+/* mTooltip */
+.mTooltip { position:relative; display:inline-block; width:15px; height:14px; vertical-align:middle; text-align:left; *zoom:1; *display:inline; }
+.mTooltip .tooltip { display:none; position:absolute; left:-13px; top:20px; text-align:left; font-weight:normal; letter-spacing:normal; border:1px solid #6f94bf; background-color:#fff; border-radius:3px; }
+.mTooltip .close { position:absolute; right:12px; top:12px; overflow:hidden; width:12px; height:11px; text-indent:150%; white-space:nowrap; background:url('//img.echosting.cafe24.com/suio/sflex_tooltip.png') -438px -100px no-repeat; }
+.mTooltip .edge { position:absolute; left:14px; top:-6px; width:9px; height:6px; font-size:0; line-height:0; background:url('//img.echosting.cafe24.com/suio/sflex_tooltip.png') -391px -200px no-repeat; }
+.mTooltip .content { padding:10px; line-height:1.2; }
+.mTooltip .titleEm,
+.mTooltip .titleTip { display:block; margin:10px 20px 7px 0; padding:0 0 0 15px; border-bottom:0; color:#1c1c1c; font-size:12px; background:url('//img.echosting.cafe24.com/suio/sflex_tooltip.png') -240px -499px no-repeat; }
+.mTooltip .titleEm:first-child { margin-top:0; }
+.mTooltip .titleTip { padding-left:28px; background-position:-28px -900px; }
+.mTooltip .title { display:block; margin:10px 0 5px; padding:0 0 0 15px; color:#6f6f6f; font-size:11px; Word-spacing:-1px; background:url('//img.echosting.cafe24.com/suio/sflex_tooltip.png') -191px -597px no-repeat; }
+/* mBoard thead */
+.mBoard thead th .mTooltip { vertical-align:top; }
+/* �ㅻⅨ履� 醫��� 吏������� */
+.mTooltip .tooltip.posRight { left:13px; }
+.mTooltip .tooltip.posRight .edge { left:auto; right:2px;  }
+/* ���댁� 怨듯�� */
+.mTooltip .icon { position:absolute; overflow:hidden; width:100%; height:100%; text-indent:150%; white-space:nowrap; cursor:pointer; background:url('//img.echosting.cafe24.com/suio/sflex_tooltip.png') -486px 0 no-repeat; }
+/* ���댁� : �����몄�ㅼ������ */
+.mTooltip.typeDesign { width:87px; height:14px; }
+.mTooltip.typeDesign .icon { background:url('//img.echosting.cafe24.com/suio/sfix_icon_guide.png') 0 0 no-repeat; }
+/* ���댁� : 踰���怨�吏� */
+.mTooltip.typeLaw { width:56px; height:14px; }
+.mTooltip.typeLaw .icon { background:url('//img.echosting.cafe24.com/suio/sfix_icon_guide.png') 0 -50px no-repeat; }
+/* ���ㅽ���고�� */
+.mTooltip.typeText { width:auto; }
+.mTooltip.typeText .text { font-size:11px; line-height:11px; color:#666; vertical-align:top; background:none; }
+/* show */
+.mTooltip.show { z-index:80; }
+/* width */
+.mTooltip.gSmall .tooltip { width:258px; }
+.mTooltip.gMedium .tooltip { width:348px; }
+.mTooltip.gLarge .tooltip { width:508px; }
+/* �대�몄� 誘몃━蹂닿린 */
+.mTooltip .gPreview { display:table; table-layout:fixed; }
+.mTooltip .gPreview .text { display:table-cell; padding:0 6px 10px 4px; vertical-align:top; }
+.mTooltip .gPreview .thumb { display:table-cell; }
+.mTooltip .gPreview > li { display:table-cell; padding:0 0 0 10px; vertical-align:top; }
+.mTooltip .gPreview > li:first-child { padding-left:0; }
+/* ���� �대�몄� */
+.mTooltip .gImage { margin:5px 0; }
+.mTooltip .gImage.center { text-align:center; }
+/* gLabel(label)�� �ㅻ� �댄����怨� */
+.mTooltip.gLabel { margin:0 40px 0 -35px; }
+/* �ㅽ�щ· �몃� ���� */
+#tooltipSCrollView { position:static; width:0 !important; height:0 !important; }
+#tooltipSCrollView .tooltip { position:absolute; z-index:1000; display:block; }
+/* 2以� �댁�� �댄�� �곗륫 ���� */
+.gTooltip > span { display:inline-block; *zoom:1; }
+.mBoard th .gTooltip .mTooltip { margin:-15px 0 0; text-align:left; vertical-align:middle; }
+
+ul.col_list {float:left; width:100%; margin:1px 0 0 0;}
+ul.col_list li {float:left; margin-right:25px; padding:2px 0 0 0; display:inline;}
+ul.col_list li.fl_r {float:right; margin:0;}
+ul.col_list li.btn {padding:2px 0 0 0; _padding:2px 0;}
+ul.col_list li.btn .btn01 {margin:-2px 0 0 0;}
+
+/* mList */
+p.mList { margin:10px 0 0 0; padding:0 0 0 9px; color:#898989; font-size:11px; line-height:1.5; background:url("//img.echosting.cafe24.com/suio/sflex_ico.png") no-repeat -495px 7px; }
+ul.mList { margin:10px 0 0 0; }
+ul.mList li { margin:0; padding:0 0 0 9px; color:#898989; font-size:11px; line-height:1.5; background:url("//img.echosting.cafe24.com/suio/sflex_ico.png") no-repeat -495px 7px; }
+ol.mList { margin:10px 0 0 15px; }
+ol.mList li { list-style:decimal; color:#898989; font-size:11px; line-height:1.5; }
+ol.mList li li { list-style:none; }
+.mList li.empty { padding:0; background:none; }
+/* mList + typeMore */
+p.mList.typeMore,
+ul.mList.typeMore li { color:#1c1c1c; font-size:12px; text-align:left; background-position:-445px -93px; }
+ol.mList.typeMore li { color:#1c1c1c; font-size:12px; }
+/* mList + typeMore + gIndent */
+p.mList.typeMore.gIndent,
+ul.mList.typeMore.gIndent { margin-left:15px; }
+ol.mList.typeMore.gIndent { margin-left:30px; }
+/* mList Reset */
+.mTooltip .mList { margin:0 0 0 6px; }
+.mTooltip ol.mList li { padding-left:9px; list-style:none; background:none; }
+.mTooltip .mList li li { margin:0 0 0 10px; }
+.mTooltip .mList li ol li { padding-left:0; background:none; }
+.mTooltip ol.mList ul li { background:url("//img.echosting.cafe24.com/suio/sflex_ico.png") no-repeat -495px 7px; *background-position:-495px 7px; }
+.mBoard p.mList.typeMore,
+.mBoard ul.mList.typeMore,
+.mBoard ol.mList.typeMore { margin-top:0; }
+.mZipcode p.mList.typeMore,
+.mZipcode ul.mList.typeMore { margin-bottom:5px; }
+.mBox .mList:first-child { margin-top:0; }
+
+.ico_coupon { padding:3px 6px 2px; border:1px solid #8561c2; border-radius:2px; white-space:nowrap; font-weight:bold; font-size:11px; color:#fff; text-decoration:none; background:#8f61da; }
+.ico_details, .ico_stop { padding:3px 10px 3px 11px; border:1px solid #c8c8ca; border-radius:2px; font-size:11px; white-space:nowrap; text-decoration:none; background:#f6f6f6; box-shadow:inset 1px 1px #fff, inset -1px 0 #fff; }
+.ico_coupon:hover, .ico_details:hover, .ico_stop:hover { text-decoration:none; }
+.ico_stop { color:#ff0000; }
+.ico_details { color:#545454; }
+
+img { vertical-align:middle; }
+
+/* mAnswer */
+.mAnswer .answer { position:relative; margin:8px 0 0 0; line-height:18px; text-align:left; color:#424043; }
