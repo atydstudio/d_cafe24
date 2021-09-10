@@ -1,710 +1,494 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-  <head>
-    <!-- Required Meta Tags Always Come First -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="imagetoolbar" content="no">
 
-    <!-- Title -->
-    <title>CAFE24 디자인센터 ERP - Admin</title>
+<title>디자인센터 관리</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="./d/comm/admin.css" media="screen" />
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!-- 210908 추가 -->
+<link rel="stylesheet" href="./assets/vendor/icon-set/style.css">
+<link rel="stylesheet" href="./assets/vendor/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="./assets/vendor/@yaireo/tagify/dist/tagify.css">
+<link rel="stylesheet" href="./assets/vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="./assets/vendor/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="./assets/css/docs.min.css">
+<link rel="stylesheet" href="./assets/vendor/datatables.net.extensions/fixedColumns.dataTables.min.css">
+<link rel="stylesheet" href="./assets/css/theme.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+<script src="./assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+<script src="./assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+<!-- // 210908 추가 -->
 
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="./assets/vendor/icon-set/style.css">
-    <link rel="stylesheet" href="./assets/vendor/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="./assets/vendor/@yaireo/tagify/dist/tagify.css">
-    <link rel="stylesheet" href="./assets/vendor/daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="./assets/vendor/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="./assets/css/docs.min.css">
-    <link rel="stylesheet" href="./assets/vendor/datatables.net.extensions/fixedColumns.dataTables.min.css">
+    <script type="text/javascript">
+        function setUpload(idx){
 
-    <!-- CSS Front -->
-    <link rel="stylesheet" href="./assets/css/theme.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
-    <script src="./assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
-    <script src="./assets/vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+            var frm=document.getElementById('adminForm'+idx);
 
-  </head>
+            if(frm.productCode.value == ''){
+                alert('상품코드를 입력해 주세요.');
+                frm.productCode.focus();
+                return;
+            }
+            var ok=confirm('메인 홍보 롤링을 적용합니다.');
 
-  <body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl   footer-offset">
+            if(ok==false)
+                return;
 
-    <script src="./assets/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+            frm.submit();
+        }
+        function setMove(idx, idx2){
+            document.forms['changeForm'].idx.value=idx;
+            document.forms['changeForm'].changeIdx.value=idx2;
+            document.forms['changeForm'].submit();
+        }
+    </script>
+</head>
 
-    <!-- ========== HEADER ========== -->
+<body>
+<form name="changeForm" method="POST" action="product_display_main_toprolling_move_exe.php">
+<input type="hidden" name="idx" value="">
+<input type="hidden" name="changeIdx" value="">
+</form>
 
-    <header id="header" class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
-      <div class="navbar-nav-wrap">
-        <div class="navbar-brand-wrapper">
-          <!-- Logo -->
-          <a class="navbar-brand" href="./index.html" aria-label="Front">
-            <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
-            <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
-          </a>
-          <!-- End Logo -->
+  <div id="wrap">
+    <!-- log, top menu -->
+    
+    <!-- 로고, 상단 탭메뉴 -->
+    <div class="logout"><a href="https://admin-qa-d.cafe24.com target="_blank">디자인센터</a> <span class="cccc">|</span> <span class="cccc">|</span> <a href="/login/logout_exe.php">로그아웃</a></div>
+    <div id="header">
+      <h1><a href="/d/"> <img src="https://img.cafe24.com/img3/d_center/admin/logo.gif" alt="디자인센터관리" /></a></h1>
+
+        <div class="mainNav">
+          <ul>
+              <li class="on"><a href="/d/product/product_list.php">사이트운영</a></li>
+              <li ><a href="/d/brand/brand_list.php">브랜드관리</a></li>
+              <li ><a href="/d/purchase/purchase_payment_list.php?productTypeCode=PTMD">거래관리</a></li>
+              <li ><a href="/d/stat/stat_sale_cnt_list.php">서비스통계</a></li>
+              <li ><a href="/d/api_info/">API정보조회</a></li>
+          </ul>
         </div>
+      </div>
+      <!-- 로고, 상단 탭메뉴 ED -->
 
-        <div class="navbar-nav-wrap-content-left">
-          <!-- Navbar Vertical Toggle -->
-          <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
-            <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip"
-              data-placement="right" title="Collapse"></i>
-            <i class="tio-last-page navbar-vertical-aside-toggle-full-align"
-              data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
-              data-toggle="tooltip" data-placement="right" title="Expand"></i>
-          </button>
-        </div>
-        <!-- End Navbar Vertical Toggle -->
+      <!--// log, top menu -->
 
-        <!-- Navbar -->
-        <div class="navbar-nav-wrap-content-left collapse navbar-collapse" id="navbarNavMenu">
-          <div class="navbar-body">
-            <ul class="navbar-nav flex-grow-1">
-              <!-- 상단 메인 메뉴 -->
-              <!-- Nav -->
-              <ul class="nav nav-segment">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">
-                    <i class="tio-home-outlined nav-icon"></i> 사이트 운영
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="tio-user-outlined nav-icon"></i> 브랜드 관리
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="tio-tune nav-icon"></i> 거래 관리
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
-                    <i class="tio-image nav-icon"></i> 서비스 통계
-                  </a>
-                </li>
-              </ul>
-              <!-- End Nav -->
-              <!-- End 상단 메인 메뉴 -->
-            </ul>
-          </div>
+      <!-- 컨텐츠 시작 -->
+      <div id="middle">
 
-          <!-- 상단 서브 메뉴 -->
-          <div class="navbar-nav-wrap-content-right">
-            <!-- Navbar -->
-            <ul class="navbar-nav align-items-center flex-row">
-
-              <!-- 링크 -->
-              <div class="hs-unfold">
-
-                <button type="button" class="btn btn-white">
-                  디자인센터
-                  <i class="tio-menu-vs-outlined ml-1"></i>
-                </button>
-
-                <div class="navbar-dropdown-menu" style="width: 20rem;">
-                </div>
+        <!-- 210908 수정 -->
+        <!-- leftmenu -->
+        <div id="second_nav">
+          <div class="leftmenu_bg">
+            <div class="leftmenu_top"></div>
+              <div class="leftmenu">
+                <ul class="top">
+                    <li><a href="/d/product/product_list.php">상품 조회</a></li>
+                    <li><a href="/d/product/product_category.php">상품 카테고리 설정</a></li>
+                    <!-- <li><a hef="/d/product/product_sample_search_list.php"  >구 샘플사이트 ID 검색</a></li> 
+                    <li><a href="/d/product/product_designmode_modify.php"  >상품 디자인모드 변경</a></li> -->
+                </ul>
+                <ul class="top">
+                    <li><a href="#">진열 심사</a></li> 
+                    <li><a href="./erp_04_gnb_display.html" class="on">GNB 진열</a></li>
+                    <li><a href="./erp_05_main_top_display.html">메인 상단 진열</a></li>
+                    <li><a href="#">메인 독점 상품</a></li>
+                    <li><a href="#" >기획전</a></li>
+                </ul>
+                <!-- <ul class="top">
+                    <li><a href="/d/product/product_display_main_topflash.php" >메인 홍보플래시</a></li> 
+                    <li><a href="/d/product/product_display_main_toprolling.php" class="on">메인 상단 롤링</a></li>
+                    <li><a href="/d/product/product_display_main_only.php" >메인 독점상품</a></li>
+                    <li><a href="/d/product/product_display_main_trand.php" >메인 트렌드채널</a></li>
+                    <li><a href="/d/product/product_display_main_mentoring.php" >메인 기업홍보</a></li>
+                    <li><a href="/d/product/product_display_main_choice.php" >메인 구매자의선택</a></li>
+                    <li><a href="/d/product/product_display_main_pdesign.php" >메인 부분디자인</a></li>
+                    <li><a href="/d/product/product_display_main_design.php" >메인 디자인시안</a></li>
+                </ul> -->
+                <ul class="top">
+                    <li><a href="/d/sitemanage/sitemanage_best.php?productTypeCode=PTMD&designMode=season2" >베스트셀러 선발</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_best_product.php?productTypeCode=PTMD&designMode=season2" >베스트셀러 관리</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_safety_best.php?productTypeCode=PTMD&designMode=season2" >베스트셀러 선발</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_safety_best_product.php?productTypeCode=PTMD&designMode=season2" >베스트셀러 관리</a></li>
+                    <!-- <li><a href="/d/sitemanage/sitemanage_hotclick.php?productTypeCode=PTMD&designMode=season2" >핫클릭 선발</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_hotclick_product.php?productTypeCode=PTMD&designMode=season2" >핫클릭 관리</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_brand.php?productTypeCode=PTMD&designMode=season2" >인기브랜드 선발</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_brand_agency.php?productTypeCode=PTMD&designMode=season2" >인기브랜드 관리</a></li> -->
+                    <li><a href="/d/sitemanage/sitemanage_searchword.php" >인기검색어 선발</a></li>
+                    <!-- <li><a href="/d/sitemanage/sitemanage_searchword_product.php" >인기검색어 관리</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_fulltext_stopwords_manage.php" >Full-text 금지어 관리</a></li> -->
+                </ul>
+                <ul class="top">
+                    <li><a href="/d/sitemanage/sitemanage_faq_list.php">자주묻는질문 관리</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_guide_list.php">이용가이드 관리</a></li>
+                    <li><a href="/d/sitemanage/sitemanage_notice_list.php">공지사항 관리</a>
+                        <ul style="padding-left:20px">
+                            <li><a href="/d/sitemanage/sitemanage_notice_list.php?countryCode=KR">국내</a></li>
+                            <li><a href="/d/sitemanage/sitemanage_notice_list.php?countryCode=JP">해외</a></li>
+                        </ul>
+                    </li>
+                </ul>
               </div>
-              <!-- End 링크 -->
-              <div class="col column-divider text-left"> </div>
-              <li class="nav-item">
-                <!-- Account -->
-                <div class="hs-unfold">
-                  <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper " href="javascript:;"
-                     data-hs-unfold-options='{
-                       "target": "#accountNavbarDropdown",
-                       "type": "css-animation"
-                     }'>
-                    <div class="avatar avatar-sm avatar-circle">
-                      <img class="avatar-img" src="./assets/img/160x160/img1.jpg" alt="Image Description">
-                      <span class="avatar-status avatar-sm-status avatar-status-success"></span>
-                    </div>
-                  </a>
-                  <div id="accountNavbarDropdown" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account" style="width: 16rem;">
-                    <div class="dropdown-item-text">
-                      <div class="media align-items-center">
-                        <div class="avatar avatar-sm avatar-circle mr-2">
-                          <img class="avatar-img" src="./assets/img/160x160/img1.jpg" alt="Image Description">
-                        </div>
-                        <div class="media-body">
-                          <span class="card-title h5">이영준님</span>
-                          <span class="card-text">@cafe24corp.com</span>
-                        </div>
+            </div>
+        </div>
+        <!--// leftmenu -->
+        <!-- //210908 수정 -->
+
+          
+        <div id="content_group">
+
+
+
+
+
+            <!-- 210908 컨탠츠 추가 시작 -->
+            <div class="content container-fluid">
+              <div class="page-header sbm">
+                <!-- Tab Content -->
+                <div class="tab-content" id="navTabContent5">
+      
+                  <div class="tab-pane active" id="nav-result5" role="tabpanel" aria-labelledby="nav-resultTab5">
+      
+                    <!-- Nav Tab -->
+                    <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="./erp_04_gnb_display.html">노출함</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./erp_04_gnb_display_none.html">노출안함</a>
+                      </li>
+                    </ul>
+                    <!-- End Nav Tab -->
+                  </div>
+                </div>
+                <!-- Page Header 타이틀 -->  
+                <h1 class="page-header-title">GNB 진열</h1>
+                <!-- End Page Header 타이틀 -->
+              </div>
+      
+              <!-- Card -->
+              <div class="card">
+                <!-- Tab Content -->
+                <div class="p-4" id="">
+                  <form>
+
+                    <div class="row mt-5 mb-3">
+                      <label for="requiredLabel" class="col-md-3 col-form-label input-label ">메뉴</label>
+                      <div class="col-md-6 js-form-message">
+                        <select class="custom-select" style="width:732px;">
+                          <option selected="" value="1">전체</option>
+                          <option value="2">카테고리</option>
+                          <option value="3">기획전</option>
+                          <option value="4">커스텀</option>
+                          <option value="5">베스트</option>
+                        </select>
                       </div>
                     </div>
-                    <div class="dropdown-divider"></div>
-
-                    <a class="dropdown-item" href="#">
-                      <span class="text-truncate pr-2" title="Profile &amp; account">프로필 계정설정</span>
-                    </a>
-                    <!-- End Unfold -->
-
-                    <a class="dropdown-item" href="#">
-                      <span class="text-truncate pr-2" title="Manage team">설정</span>
-                    </a>
-
-                    <div class="dropdown-divider"></div>
-
-                    <a class="dropdown-item" href="#">
-                      <span class="text-truncate pr-2" title="Sign out">log out</span>
-                    </a>
-                  </div>
-                </div>
-                <!-- End Account -->
-
-              </li>
-            </ul>
-            <!-- End Navbar -->
-          </div>
-          <!-- End 상단 서브 메뉴 -->
-
-        </div>
-    </header>
-
-    <!-- ========== END HEADER ========== -->
-
-    <!-- ========== MAIN CONTENT ========== -->
-
-    <!-- 메인 네비게이션 -->
-    <aside class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered">
-      <div class="navbar-vertical-container">
-        <div class="navbar-vertical-footer-offset">
-          <div class="navbar-brand-wrapper justify-content-between">
-
-            <!-- Logo -->
-            <a class="navbar-brand" href="./index.html" aria-label="Front">
-              <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
-              <img class="navbar-brand-logo-mini" src="./assets/svg/logos/logo-short.svg" alt="Logo">
-            </a>
-            <!-- End Logo -->
-
-            <!-- Navbar Vertical Toggle -->
-            <button type="button"
-              class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
-              <i class="tio-clear tio-lg"></i>
-            </button>
-            <!-- End Navbar Vertical Toggle -->
-
-          </div>
-
-          <!-- Content -->
-          <div class="navbar-vertical-content">
-            <ul class="navbar-nav navbar-nav-lg nav-tabs">
-
-              <!-- 사이트 운영 -->
-              <li class="nav-item">
-                <small class="nav-subtitle" title="사이트 운영">사이트 운영</small>
-                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
-              </li>
-              <!-- End 사이트 운영 -->
-
-              <!-- 상품 조회 -->
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="상품 조회" data-placement="left">
-                  <i class="tio-earth-east nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">상품 조회</span>
-                </a>
-              </li>
-              <!-- End 상품 조회 -->
-
-              <!-- 상품 카테고리 설정 -->
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="상품카테고리 설정" data-placement="left">
-                  <i class="tio-tune-horizontal nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">상품카테고리 설정</span>
-                </a>
-              </li>
-              <!-- End 상품 카테고리 설정 -->
-
-              <!-- 디바이더 -->
-              <li class="nav-item">
-                <div class="nav-divider"></div>
-              </li>
-              <!-- End 디바이더 -->
-
-              <!-- 진열 심사 -->
-              <li class="nav-item">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="진열 심사" data-placement="left">
-                  <i class="tio-imac nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">진열 심사</span>
-                </a>
-              </li>
-              <!-- End 진열 심사 -->
-
-              <!-- GNB 진열 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link active" href="./erp_04_gnb_display.html" title="GNB 진열" data-placement="left">
-                  <i class="tio-format-bullets nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">GNB 진열</span>
-                </a>
-              </li>
-              <!-- End GNB 진열 -->
-
-              <!-- 메인 상단 진열 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="./erp_05_main_top_display.html" title="메인 상단 진열" data-placement="left">
-                  <i class="tio-dashboard-vs-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">메인 상단 진열</span>
-                </a>
-              </li>
-              <!-- End 메인 상단 진열 -->
-
-              <!-- 메인 독점 상품 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="메인 독점 상품" data-placement="left">
-                  <i class="tio-glasses nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">메인 독점 상품</span>
-                </a>
-              </li>
-              <!-- End 메인 독점 상품 -->
-
-              <!-- 기획전 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="기획전" data-placement="left">
-                  <i class="tio-weight-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">기획전</span>
-                </a>
-              </li>
-              <!-- End 기획전 -->
-
-              <!-- 디바이더 -->
-              <li class="nav-item">
-                <div class="nav-divider"></div>
-              </li>
-              <!-- End 디바이더 -->
-
-              <!-- 베스트셀러 선발 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="베스트셀러 선발" data-placement="left">
-                  <i class="tio-crown-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">베스트셀러 선발</span>
-                </a>
-              </li>
-              <!-- End 베스트셀러 선발 -->
-
-              <!-- 베스트셀러 관리 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="베스트셀러 관리" data-placement="left">
-                  <i class="tio-premium-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">베스트셀러 관리</span>
-                </a>
-              </li>
-              <!-- End 베스트셀러 관리 -->
-
-              <!-- 인기브랜드 선발 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="인기브랜드 선발" data-placement="left">
-                  <i class="tio-award-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">인기브랜드 선발</span>
-                </a>
-              </li>
-              <!-- End 인기브랜드 선발 -->
-
-              <!-- 인기브랜드 관리 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="인기브랜드 관리" data-placement="left">
-                  <i class="tio-medal nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">인기브랜드 관리</span>
-                </a>
-              </li>
-              <!-- End 인기브랜드 관리 -->
-
-              <!-- 인기검색어 선발 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="인기검색어 선발" data-placement="left">
-                  <i class="tio-heart-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">인기검색어 선발</span>
-                </a>
-              </li>
-              <!-- End 인기검색어 선발 -->
-
-              <!-- 디바이더 -->
-              <li class="nav-item">
-                <div class="nav-divider"></div>
-              </li>
-              <!-- End 디바이더 -->
-
-              <!-- 자주묻는질문 관리 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="자주묻는질문 관리" data-placement="left">
-                  <i class="tio-bookmark-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">자주묻는질문 관리</span>
-                </a>
-              </li>
-              <!-- End 자주묻는질문 관리 -->
-
-              <!-- 이용가이드 관리 -->
-              <li class="nav-item ">
-                <a class="js-nav-tooltip-link nav-link " href="#" title="이용가이드 관리" data-placement="left">
-                  <i class="tio-message-failed-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">이용가이드 관리</span>
-                </a>
-              </li>
-              <!-- End 이용가이드 관리 -->
-
-              <!-- 공지사항 관리 -->
-              <li class="navbar-vertical-aside-has-menu ">
-                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle " href="javascript:;" title="공지사항 관리">
-                  <i class="tio-notifications-on-outlined nav-icon"></i>
-                  <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">공지사항 관리</span>
-                </a>
-
-                <ul class="js-navbar-vertical-aside-submenu nav nav-sub">
-                  <li class="nav-item">
-                    <a class="nav-link " href="#" title="국내">
-                      <span class="tio-circle nav-indicator-icon"></span>
-                      <span class="text-truncate">국내</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link " href="#" title="해외">
-                      <span class="tio-circle nav-indicator-icon"></span>
-                      <span class="text-truncate">해외</span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <!-- End 공지사항 관리 -->
-            </ul>
-          </div>
-          <!-- End Content -->
-
-          <!-- Footer -->
-          <div class="navbar-vertical-footer">
-            © 2021 CAFE24 Inc.
-          </div>
-          <!-- End Footer -->
-
-        </div>
-      </div>
-    </aside>
-    <!-- End 메인 네비게이션 -->
-
-    <!-- 컨텐츠 시작 -->
-    <main id="content" role="main" class="main">
-      <!-- Content -->
-      <div class="content container-fluid">
-        <div class="page-header sbm">
-
-          <!-- Page Header 타이틀 -->
-          <div class="page-header sbm">
-            <div class="row align-items-center mb-3">
-              <div class="col-sm mb-2 mb-sm-0">
-                <h1 class="page-header-title">GNB 진열</h1>
-              </div>
-            </div>
-          </div>
-          <!-- End Page Header 타이틀 -->
-
-          <!-- Tab Content -->
-          <div class="tab-content" id="navTabContent5">
-
-            <div class="tab-pane fade show active" id="nav-result5" role="tabpanel" aria-labelledby="nav-resultTab5">
-
-              <!-- Nav Tab -->
-              <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" href="./erp_04_gnb_display.html">노출함</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./erp_04_gnb_display_none.html">노출안함</a>
-                </li>
-              </ul>
-              <!-- End Nav Tab -->
-            </div>
-
-            <!-- Card 입력 시작 -->
-            <div class="card">
-              <!-- Tab Content -->
-              <div class="tab-pane fade p-4 show active" id="nav-result2" role="tabpanel" aria-labelledby="nav-resultTab2">
-                <!-- For Validation -->
-                <form class="js-validate">
-                  <!-- Input 메뉴 -->
-                  <div class="row mt-1 mb-3">
-                    <label for="requiredLabel" class="col-md-3 col-form-label input-label text-md-right">메뉴</label>
-                    <div class="col-md-6">
-                      <select class="custom-select">
-                        <option selected="" value="1">전체</option>
-                        <option value="2">카테고리</option>
-                        <option value="3">기획전</option>
-                        <option value="3">커스텀</option>
-                        <option value="3">베스트</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- End Input 메뉴-->
-
-                  <!-- Button Submit -->
-                  <div class="row mb-3">
-                    <div class="col-md-6 offset-md-5">
+                    
+                    <div class="offset-md-5">
                       <button type="button" class="btn btn-dark">검색하기</button>
                     </div>
-
                     <!-- End Button Submit -->
+                   
+                  </form>
+                </div>
+              </div>
+              <!-- End Card -->
+
+              <div class="card">
+                <!-- Header -->
+                <div class="card-header">
+                  <div class="card-header-title">
+                    전체 <span>7,234</span>
                   </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card -->
-        <div class="card">
-          <!-- Header -->
-          <div class="card-header">
-            <div class="card-header-title">
-              전체 <span>7,234</span>
-            </div>
-
-            <!-- Datatable Info -->
-            <div id="datatableWithCheckboxSelectCounterInfo" class="mr-2 counter" style="display: none;">
-              <div class="d-flex align-items-center">
-                <span class="font-size-sm mr-3">
-                  <span id="datatableWithCheckboxSelectCounter">0</span>
-                  선택한 항목을
-                </span>
-                <a class="btn btn-sm btn-soft-secondary btn-icon" href="javascript:;">
-                  <i class="tio-arrow-downward"></i>
-                </a>
-                <a class="btn btn-sm btn-soft-secondary btn-icon" href="javascript:;">
-                  <i class="tio-chevron-down"></i>
-                </a>
-                <a class="btn btn-sm btn-soft-secondary btn-icon" href="javascript:;">
-                  <i class="tio-chevron-up"></i>
-                </a>
-                <a class="btn btn-sm btn-soft-secondary btn-icon" href="javascript:;">
-                  <i class="tio-arrow-upward"></i>
-                </a>
-                <a class="btn btn-sm btn-outline-danger" href="javascript:;">
-                  <i class="tio-delete-outlined"></i> 노출안함
-                </a>
-                <a class="btn btn-sm btn-primary" href="javascript:;">
-                  <i class="tio-save-outlined"></i> 설정저장
-                </a>
-              </div>
-            </div>
-            <!-- End Datatable Info -->
-          </div>
-          <!-- End Header -->
-
-          <!-- Table -->
-          <div class="table-responsive datatable-custom">
-            <table id="datatableWithCheckboxSelect"
-              class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
-              data-hs-datatables-options='{
-              "columnDefs": [{
-                  "targets": [0],
-                  "orderable": false
-              }],
-              "order": []
-            }'>
-              <thead class="thead-light">
-                <tr>
-                  <th class="table-column-pr-0">
-                    <div class="custom-control custom-checkbox">
-                      <input id="datatableWithCheckboxSelectAll" type="checkbox" class="custom-control-input">
-                      <label class="custom-control-label" for="datatableWithCheckboxSelectAll"></label>
-                    </div>
-                  </th>
-                  <th class="table-column-pl-0">노출순서</th>
-                  <th>메뉴</th>
-                  <th style="width:500px">제목</th>
-                  <th>남은종료/시작일</th>
-                  <th>노출기간</th>
-                  <th>등록일자</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td class="table-column-pr-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
-                      <label class="custom-control-label" for="usersDataCheck1"></label>
-                    </div>
-                  </td>
-                  <td class="table-column-pl-0">
-                   -
-                  </td>
-                  <td>
-                    <span class="d-block h5 mb-0">카테고리</span>
-                   
-                  </td>
-                  <td style="text-align:left">GNB 제목</td>
-                  <td>
-                    D - 100
-                  </td>
-                  <td>
-                    2021.09.07 ~2021.12.31
-                  </td>
-                  <td>
-                    2021.09.07 
-                  </td>
-                </tr>
-                <tr>
-                  <td class="table-column-pr-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="usersDataCheck2">
-                      <label class="custom-control-label" for="usersDataCheck2"></label>
-                    </div>
-                  </td>
-                  <td class="table-column-pl-0">
-                   1
-                  </td>
-                  <td>
-                    <span class="d-block h5 mb-0">카테고리</span>
-                   
-                  </td>
-                  <td style="text-align:left">GNB 제목</td>
-                  <td>
-                    D - 100
-                  </td>
-                  <td>
-                    2021.09.07 ~2021.12.31
-                  </td>
-                  <td>
-                    2021.09.07 
-                  </td>
-                </tr>
-                <tr>
-                  <td class="table-column-pr-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="usersDataCheck3">
-                      <label class="custom-control-label" for="usersDataCheck3"></label>
-                    </div>
-                  </td>
-                  <td class="table-column-pl-0">
-                   1
-                  </td>
-                  <td>
-                    <span class="d-block h5 mb-0">카테고리</span>
-                   
-                  </td>
-                  <td style="text-align:left">GNB 제목</td>
-                  <td>
-                    D - 100
-                  </td>
-                  <td>
-                    2021.09.07 ~2021.12.31
-                  </td>
-                  <td>
-                    2021.09.07 
-                  </td>
-                </tr>
-                <tr>
-                  <td class="table-column-pr-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="usersDataCheck4">
-                      <label class="custom-control-label" for="usersDataCheck4"></label>
-                    </div>
-                  </td>
-                  <td class="table-column-pl-0">
-                   1
-                  </td>
-                  <td>
-                    <span class="d-block h5 mb-0">커스텀</span>
-                   
-                  </td>
-                  <td style="text-align:left">GNB 제목</td>
-                  <td>
-                    D - 100
-                  </td>
-                  <td>
-                    2021.09.07 ~2021.12.31
-                  </td>
-                  <td>
-                    2021.09.07 
-                  </td>
-                </tr>
-                <tr>
-                  <td class="table-column-pr-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="usersDataCheck5">
-                      <label class="custom-control-label" for="usersDataCheck5"></label>
-                    </div>
-                  </td>
-                  <td class="table-column-pl-0">
-                    1
-                  </td>
-                  <td>
-                    <span class="d-block h5 mb-0">베스트</span>
-                   
-                  </td>
-                  <td style="text-align:left">GNB 제목</td>
-                  <td>
-                    D - 100
-                  </td>
-                  <td>
-                    2021.09.07 ~2021.12.31
-                  </td>
-                  <td>
-                    2021.09.07 
-                  </td>
-                </tr>
-                <tr>
-                  <td class="table-column-pr-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="usersDataCheck6">
-                      <label class="custom-control-label" for="usersDataCheck6"></label>
-                    </div>
-                  </td>
-                  <td class="table-column-pl-0">
-                   1
-                  </td>
-                  <td>
-                    <span class="d-block h5 mb-0">기획전</span>
-                   
-                  </td>
-                  <td style="text-align:left">GNB 제목</td>
-                  <td>
-                    D - 100
-                  </td>
-                  <td>
-                    2021.09.07 ~2021.12.31
-                  </td>
-                  <td>
-                    2021.09.07 
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- End Table -->
-
-          <!-- Footer -->
-          <div class="card-footer">
-           <!-- Pagination -->
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-              </ul>
-            </nav>
-            <!-- End Pagination -->
-          </div>
-          <!-- End Footer -->
-
-        </div>
-        <!-- End Card -->
-
-        <div class="box_btn">
-          <a button type="button" class="btn btn-new" href="./erp_04_gnb_display_add.html">신규 생성하기</button></a>
-        </div>
-
-      </div>
-      <!-- End Content -->
-    </main>
-    <!-- END 컨텐츠 시작 -->
       
-    <!-- ========== END MAIN CONTENT ========== -->
+                  <!-- Datatable Info -->
+                  <div id="datatableWithCheckboxSelectCounterInfo" class="mr-2 counter" style="display:block;">
+                    <div class="d-flex align-items-center">
+                      <span class="font-size-sm mr-3">
+                        <span id="datatableWithCheckboxSelectCounter">0</span>
+                        선택한 항목을
+                      </span>
+                      <a class="btn btn-sm btn-soft-secondary btn-icon" href="javascript:;">
+                        <i class="tio-arrow-downward"></i>
+                      </a>
+                      <a class="btn btn-sm btn-soft-secondary btn-icon" href="javascript:;">
+                        <i class="tio-chevron-down"></i>
+                      </a>
+                      <a class="btn btn-sm btn-soft-secondary btn-icon" href="javascript:;">
+                        <i class="tio-chevron-up"></i>
+                      </a>
+                      <a class="btn btn-sm btn-soft-secondary btn-icon" href="javascript:;">
+                        <i class="tio-arrow-upward"></i>
+                      </a>
+                      <a class="btn btn-sm btn-outline-danger" href="javascript:;">
+                        <i class="tio-delete-outlined"></i> 노출안함
+                      </a>
+                      <a class="btn btn-sm btn-primary" href="javascript:;">
+                        <i class="tio-save-outlined"></i> 설정저장
+                      </a>
+                    </div>
+                  </div>
+                  <!-- End Datatable Info -->
+                </div>
+                <!-- End Header -->
+      
+                <!-- Table -->
+                <div class="table-responsive datatable-custom">
+                  <div id="datatableWithCheckboxSelect_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="dataTables_length" id="datatableWithCheckboxSelect_length">
+                      <label>Show 
+                        <select name="datatableWithCheckboxSelect_length" aria-controls="datatableWithCheckboxSelect" class="">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                       </select>
+                      entries</label>
+                    </div>
+                      
+                    <div id="datatableWithCheckboxSelect_filter" class="dataTables_filter">
+                      <label>Search:<input type="search" class="" placeholder="" aria-controls="datatableWithCheckboxSelect"></label>
+                    </div>
+                    
+                    <table id="" class="table table-lg table-borderless table-thead-bordered table-nowrap table-align-middle card-table dataTable">
+                      <colgroup>
+                        <col width="5%">
+                        <col width="5%">
+                        <col width="10%">
+                        <col width="*">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="15%">
+                      </colgroup>
+
+                      <thead class="thead-light">
+                        <tr role="row">
+                          <th class="table-column-pr-0 sorting_disabled" rowspan="1" colspan="1" aria-label="">
+                            <div class="custom-control custom-checkbox">
+                              <input id="datatableWithCheckboxSelectAll" type="checkbox" class="custom-control-input">
+                              <label class="custom-control-label" for="datatableWithCheckboxSelectAll"></label>
+                            </div>
+                          </th>
+                          <th>노출순서</th>
+                          <th>메뉴</th>
+                          <th>제목</th>
+                          <th>남은종료/시작일</th>
+                          <th>노출기간</th>
+                          <th>등록일자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr role="row">
+                          <td class="table-column-pr-0">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
+                              <label class="custom-control-label" for="usersDataCheck1"></label>
+                            </div>
+                          </td>
+                          <td class="table-column-pl-0">
+                          -
+                          </td>
+                          <td>
+                            <span class="d-block h5 mb-0">카테고리</span>
+                          </td>
+                          <td class="tx_l">
+                            카카오싱크 부스터 200% 활용하는 방법
+                          </td>
+                          <td>
+                            D - 100
+                          </td>
+                          <td>
+                            2021.09.07 ~2021.12.31
+                          </td>
+                          <td>
+                            2021.09.07 
+                          </td>
+                        </tr>
+                        <tr role="row">
+                          <td class="table-column-pr-0">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
+                              <label class="custom-control-label" for="usersDataCheck1"></label>
+                            </div>
+                          </td>
+                          <td class="table-column-pl-0">
+                          1
+                          </td>
+                          <td>
+                            <span class="d-block h5 mb-0">기획전</span>
+                          </td>
+                          <td class="tx_l">
+                            카카오싱크 부스터 200% 활용하는 방법
+                          </td>
+                          <td>
+                            D - 100
+                          </td>
+                          <td>
+                            2021.09.07 ~2021.12.31
+                          </td>
+                          <td>
+                            2021.09.07 
+                          </td>
+                        </tr>
+                        <tr role="row">
+                          <td class="table-column-pr-0">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
+                              <label class="custom-control-label" for="usersDataCheck1"></label>
+                            </div>
+                          </td>
+                          <td class="table-column-pl-0">
+                          2
+                          </td>
+                          <td>
+                            <span class="d-block h5 mb-0">기획전</span>
+                          </td>
+                          <td class="tx_l">
+                            카카오싱크 부스터 200% 활용하는 방법
+                          </td>
+                          <td>
+                            D - 100
+                          </td>
+                          <td>
+                            2021.09.07 ~2021.12.31
+                          </td>
+                          <td>
+                            2021.09.07 
+                          </td>
+                        </tr>
+                        <tr role="row">
+                          <td class="table-column-pr-0">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
+                              <label class="custom-control-label" for="usersDataCheck1"></label>
+                            </div>
+                          </td>
+                          <td class="table-column-pl-0">
+                          -
+                          </td>
+                          <td>
+                            <span class="d-block h5 mb-0">카테고리</span>
+                          </td>
+                          <td class="tx_l">
+                            카카오싱크 부스터 200% 활용하는 방법
+                          </td>
+                          <td>
+                            D - 100
+                          </td>
+                          <td>
+                            2021.09.07 ~2021.12.31
+                          </td>
+                          <td>
+                            2021.09.07 
+                          </td>
+                        </tr>
+                        <tr role="row">
+                          <td class="table-column-pr-0">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
+                              <label class="custom-control-label" for="usersDataCheck1"></label>
+                            </div>
+                          </td>
+                          <td class="table-column-pl-0">
+                          1
+                          </td>
+                          <td>
+                            <span class="d-block h5 mb-0">기획전</span>
+                          </td>
+                          <td class="tx_l">
+                            카카오싱크 부스터 200% 활용하는 방법
+                          </td>
+                          <td>
+                            D - 100
+                          </td>
+                          <td>
+                            2021.09.07 ~2021.12.31
+                          </td>
+                          <td>
+                            2021.09.07 
+                          </td>
+                        </tr>
+                        <tr role="row">
+                          <td class="table-column-pr-0">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="usersDataCheck1">
+                              <label class="custom-control-label" for="usersDataCheck1"></label>
+                            </div>
+                          </td>
+                          <td class="table-column-pl-0">
+                          2
+                          </td>
+                          <td>
+                            <span class="d-block h5 mb-0">기획전</span>
+                          </td>
+                          <td class="tx_l">
+                            카카오싱크 부스터 200% 활용하는 방법
+                          </td>
+                          <td>
+                            D - 100
+                          </td>
+                          <td>
+                            2021.09.07 ~2021.12.31
+                          </td>
+                          <td>
+                            2021.09.07 
+                          </td>
+                        </tr>
+                          
+                      </tbody>
+                    </table>
+                    <div class="dataTables_info" id="datatableWithCheckboxSelect_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div><div class="dataTables_paginate paging_simple_numbers" id="datatableWithCheckboxSelect_paginate"><ul id="datatableWithCheckboxSelect_pagination" class="pagination datatable-custom-pagination"><li class="paginate_item page-item disabled"><a class="paginate_button previous page-link" aria-controls="datatableWithCheckboxSelect" data-dt-idx="0" tabindex="0" id="datatableWithCheckboxSelect_previous"><span aria-hidden="true">Prev</span></a></li><li class="paginate_item page-item active"><a class="paginate_button page-link" aria-controls="datatableWithCheckboxSelect" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_item page-item disabled"><a class="paginate_button next page-link" aria-controls="datatableWithCheckboxSelect" data-dt-idx="2" tabindex="0" id="datatableWithCheckboxSelect_next"><span aria-hidden="true">Next</span></a></li></ul></div></div>
+                  </div>
+                  <!-- End Table -->
+      
+                <!-- Footer -->
+                <div class="card-footer">
+                 <!-- Pagination -->
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <!-- End Pagination -->
+                </div>
+                <!-- End Footer -->
+      
+              </div>
+      
+              <div class="box_btn">
+                <a button="" type="button" class="btn btn-new" href="./erp_04_gnb_display_add.html">신규 생성하기</a>
+              </div>
+            </div> 
+            <!-- //210908 컨탠츠 추가 끝 -->     
+                
+                
+
+
+          </div> 
+      </div>
+
+      <!-- footer -->
+      <div id="footer"><p></p></div>
+      <!--// footer -->
+    </main>
 
 
 
@@ -760,7 +544,6 @@
         $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
 
 
-        
         // INITIALIZATION OF GO TO
         // =======================================================
         $('.js-go-to').each(function () {
@@ -784,11 +567,11 @@
 
         // GET JSON FILE RESULTS
         // =======================================================
-        $.getJSON('../assets/json/docs-search.json', function (data) {
+        $.getJSON('../assets/json/docs-search.json', function(data) {
           docsSearch.add(data);
         });
 
-      
+
         // INITIALIZATION OF UNFOLD
         // =======================================================
         $('.js-hs-unfold-invoker').each(function () {
@@ -809,11 +592,11 @@
 
         $.HSCore.components.HSDaterangepicker.init($('.js-daterangepicker-clear'));
 
-        $('.js-daterangepicker-clear').on('apply.daterangepicker', function (ev, picker) {
+        $('.js-daterangepicker-clear').on('apply.daterangepicker', function(ev, picker) {
           $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
         });
 
-        $('.js-daterangepicker-clear').on('cancel.daterangepicker', function (ev, picker) {
+        $('.js-daterangepicker-clear').on('cancel.daterangepicker', function(ev, picker) {
           $(this).val('');
         });
 
@@ -841,35 +624,12 @@
       });
 
 
-      // INITIALIZATION OF DROPZONE FILE ATTACH MODULE
-      // =======================================================
-      $('.js-dropzone').each(function () {
-        var dropzone = $.HSCore.components.HSDropzone.init('#' + $(this).attr('id'));
-      });
-
-
-      $(document).on('ready', function () {
-        // INITIALIZATION OF DATATABLES
+        // INITIALIZATION OF DROPZONE FILE ATTACH MODULE
         // =======================================================
-        var datatable = $.HSCore.components.HSDatatables.init($('#datatable'));
-      });
+        $('.js-dropzone').each(function () {
+          var dropzone = $.HSCore.components.HSDropzone.init('#' + $(this).attr('id'));
+        });
 
-
-
-
-      // INITIALIZATION OF DATATABLES
-      // =======================================================
-      var datatable = $.HSCore.components.HSDatatables.init($('#datatableWithCheckboxSelect'), {
-        select: {
-          style: 'multi',
-          selector: 'td:first-child input[type="checkbox"]',
-          classMap: {
-            checkAll: '#datatableWithCheckboxSelectAll',
-            counter: '#datatableWithCheckboxSelectCounter',
-            counterInfo: '#datatableWithCheckboxSelectCounterInfo'
-          }
-        }
-      });
 
 
     </script>
@@ -878,6 +638,11 @@
     <script>
       if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="./assets/vendor/babel-polyfill/polyfill.min.js"><\/script>');
     </script>
-  </body>
 
+
+
+</body>
 </html>
+
+
+
